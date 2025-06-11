@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is a computer",
+    "options": [
+      "Oyo State",
+      "Electonic Devices",
+      "None",
+      "Both"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is your name",
+    "options": [
+      "John",
+      "Wale",
+      "Bimbo",
+      "Tunde"
+    ],
+    "answer": 0
+  }
+]

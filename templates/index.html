@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facial Recognition Authentication</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: auto; }
+        .flash { color: red; margin-bottom: 10px; }
+        input[type="file"] {
+            margin-top: 8px;
+            margin-bottom: 16px;
+            padding: 6px 0;
+        }
+        input[type="submit"] {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #888;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p style="font-size:1.1em;color:#555;margin-bottom:20px;">
+            Experience secure, user-friendly authentication and exam access powered by advanced face recognition technology.
+            <br>To begin, please upload a clear image of your face for authentication. If you are a new user, <a href='{{ url_for('register') }}'>register here</a>.
+        </p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="post" enctype="multipart/form-data" style="margin-bottom: 20px;">
+            <label for="file" style="font-weight:bold;">Upload your face image:</label><br>
+            <input type="file" name="file" id="file" accept="image/*" required>
+            <br>
+            <input type="submit" value="Authenticate">
+        </form>
+        <a href="{{ url_for('register') }}">Register a new user</a>
+        <footer>&copy; 2025 Department of Computer Science, University of Ilorin</footer>
+    </div>
+</body>
+</html>

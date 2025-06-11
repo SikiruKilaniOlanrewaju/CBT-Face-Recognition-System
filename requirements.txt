@@ -1,0 +1,10 @@
+facenet-pytorch
+opencv-python
+torch
+numpy
+flask
+streamlit
+Pillow
+matplotlib
+pandas
+fpdf
